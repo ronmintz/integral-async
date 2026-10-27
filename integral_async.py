@@ -26,7 +26,7 @@ async def integrate(f, start, end, delta, change_limit):
     while x < end:
         summ += delta * (f(x) + f(x + delta)) / 2.0
         x += delta
-    print(f"integrate({delta}) = {summ}")
+    print(f"integrate(delta={delta}) = {summ}")
     return summ
 
 async def integral(f, start, end, delta, change_limit):
@@ -75,9 +75,7 @@ async def tasks():
     task2 = asyncio.create_task(calc())
     await asyncio.gather(task1, task2)
     duration_tasks = time() - start_tasks
-    print(f"end tasks"
-          f""
-          f" at {time()}")
+    print(f"end tasks at {time()}")
     print("duration_input=", duration_input)
     print("duration_calc=", duration_calc)
     print("duration_tasks=", duration_tasks)

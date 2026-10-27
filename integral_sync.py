@@ -23,7 +23,7 @@ def integrate(f, start, end, delta, change_limit):
     while x < end:
         summ += delta * (f(x) + f(x + delta)) / 2.0
         x += delta
-    print(f"integrate({delta}) = {summ}")
+    print(f"integrate(delta={delta}) = {summ}")
     return summ
 
 def integral(f, start, end, delta, change_limit):
